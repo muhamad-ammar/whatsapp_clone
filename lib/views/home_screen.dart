@@ -20,13 +20,15 @@ class _HomeScreenState extends State<HomeScreen> {
           image:
           "https://res.cloudinary.com/ammar992/image/upload/v1680859026/Courses_List_View_3x_p503fy.png",
           name: "Muhammad Ammar",
-          message: "Hello its Muhammad Ammar",
+          lastMessage: "Hello its Muhammad Ammar",
+          id: "+923226258404",
           read: false),
       Conversation(
           image:
           "https://res.cloudinary.com/ammar992/image/upload/v1680859026/Courses_List_View_3x_p503fy.png",
           name: "Haifa",
-          message: "Hello its Haifa",
+          lastMessage: "Hello its Haifa",
+          id: "+923226258534",
           read: false),
     ];
     //     ListOfConversation(
@@ -51,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final double screenHeight = size.height;
     final double screenWidth = size.width;
     return Scaffold(
-      appBar: Utils.getAppBarWithTwoActions(
+      appBar: UiUtils.getAppBarWithTwoActions(
           title: Strings.whatsApp,
           icon1: const Icon(Icons.search),
           icon2: const Icon(Icons.more_vert),
@@ -72,14 +74,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 itemBuilder: (context, index) {
                  return  CustomChatTile(image: conversations![index].image!,
                       name: conversations![index].name!,
-                      lastMessage: conversations![index].message!,
+                      lastMessage: conversations![index].lastMessage!,
                       time: "",
+                      id: conversations![index].id,
                       read: conversations![index].read!);
                 },
                 separatorBuilder: (BuildContext context, int index) {
-                 return const SizedBox(
-                    height: 10,
-                  );
+                 return Insets.gapH10;
                 },
                 itemCount: conversations!.length,
                 //     children: [
@@ -109,6 +110,17 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ]),
+      floatingActionButton: SizedBox(
+        height: 120,
+        width: 70,
+        child: FloatingActionButton(
+          backgroundColor: AppTheme.primaryColor,
+          onPressed: (){},
+          elevation: 7,
+          heroTag: null,
+          child: const Icon(Icons.edit,size: 28,),
+        ),
+      ),
     );
   }
 }

@@ -12,7 +12,7 @@ class AppTheme {
   static const Color linkColor = Color(0xFF0092ff);
   static const Color messageColor = Color(0xb8d7e5fb);
   static const Color disabledColor = Color(0xFFadadad);
-  static const Color successColor = Color(0xFF0CCC83);
+  static const Color successColor = Color(0xFFdcf8c6);
   static const Color errorColor = Color(0xFFe63950);
   static const Color headingColor = Color(0xFF15224f);
   static const Color descriptionColor = Color(0xFF969aa8);
